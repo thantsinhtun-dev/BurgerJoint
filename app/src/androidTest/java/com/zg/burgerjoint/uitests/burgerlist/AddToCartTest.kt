@@ -33,6 +33,7 @@ class AddToCartTest {
         onView(first<View>(withId(R.id.btnAddToCart)))
             .perform(doubleClick())
 //            .perform(click())
+        onView(allOf(withId(R.id.rvEbookGroup), withParent(withRecyclerView(withId(R.id.rvBookMain),)))).perform(actionOnItemAtPosition<ViewHolder>(0, click()));
 
         onView(withId(R.id.tvCartCount))
             .check(matches(withText("2")))
